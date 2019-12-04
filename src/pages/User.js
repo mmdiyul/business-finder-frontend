@@ -16,8 +16,11 @@ L.Icon.Default.mergeOptions({
 class User extends Component {
   state = {
     location: {
+      nama: "",
+      alamat: "",
       latitude: 0,
-      longitude: 0
+      longitude: 0,
+      category: ""
     },
     zoom: 17
   }
@@ -31,7 +34,7 @@ class User extends Component {
         }
       })
     }, () => {
-      alert('Kami memerlukan akses lokasi!')
+      alert('Kami memerlukan akses lokasi dan akses internet!')
     })
   }
 
@@ -40,18 +43,24 @@ class User extends Component {
     return (
       <div>
         <Nav />
-        <Map id="map" center={position} zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            noWrap="true"
-          />
-          <Marker position={position}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </Map>
+        <div id="row-admin" className="w-100 p-0 m-0 row container-fluid" style={{ overflow: 'hidden' }}>
+          <div className="col-3 bg-light">
+          </div>
+          <div className="col-9 w-100 m-0 p-0">
+            <Map id="map" center={position} zoom={this.state.zoom}>
+              <TileLayer
+                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                noWrap="true"
+              />
+              <Marker position={position}>
+                <Popup>
+                  My Location
+                </Popup>
+              </Marker>
+            </Map>
+          </div>
+        </div>
       </div>
     )
   }
