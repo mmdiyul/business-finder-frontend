@@ -8,12 +8,12 @@ import Nav from '../components/Nav'
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-    iconUrl: require('../assets/current-pin.png'),
-    iconSize: [32, 32]
-    // iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-    // iconUrl: require('leaflet/dist/images/marker-icon.png'),
-    // shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-    // iconSize: [25, 41]
+    // iconUrl: require('../assets/current-pin.png'),
+    // iconSize: [32, 32]
+    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+    iconSize: [25, 41]
 });
 
 class Admin extends Component {
@@ -23,7 +23,7 @@ class Admin extends Component {
     latitude: 0,
     longitude: 0,
     category: "Cafe",
-    zoom: 17
+    zoom: 13
   }
 
   handleChangeNama = (e) => {
