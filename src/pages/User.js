@@ -15,6 +15,12 @@ L.Icon.Default.mergeOptions({
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
+const myLocationMarker = L.icon({
+  iconUrl: require('../assets/current-pin.png'),
+  iconSize: [36, 36],
+  iconAnchor: [13, 36]
+})
+
 class User extends Component {
   state = {
     place: [],
@@ -114,7 +120,7 @@ class User extends Component {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 noWrap="true"
               />
-              <Marker position={position}>
+              <Marker position={position} icon={myLocationMarker}>
                 <Popup>
                   My Location
                 </Popup>
